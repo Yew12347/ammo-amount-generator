@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ammo-amount-generator</title>
+    
+<script type="module">
+import init, * as bindings from '/randomnumber-a990d385144322b4.js';
+const wasm = await init({ module_or_path: '/randomnumber-a990d385144322b4_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+<link rel="modulepreload" href="/randomnumber-a990d385144322b4.js" crossorigin="anonymous" integrity="sha384-b3+vsF8emweNVmypVPYtlCCcrYT4UKCdo9bwDZib/YdC24gtXPbOXhuHpDk4KgGL"><link rel="preload" href="/randomnumber-a990d385144322b4_bg.wasm" crossorigin="anonymous" integrity="sha384-AILQ/EEh0bnQvnDpyQbZ9M9l1BL9hJTuOfjzjxsj3H7urJrCdgakFKBIsmBcGu8s" as="fetch" type="application/wasm"></head>
+<body>
+</body>
+</html>
