@@ -1,15 +1,16 @@
-use yew::prelude::*;
-use js_sys::Math;
+use actix_web::{get, App, HttpServer, Responder};
+use rand::Rng;
 
-#[function_component(App)]
-fn app() -> Html {
-    let random_number = (Math::random() * 100.0).floor() as u32 + 1;
-
-    html! {
-        { random_number }
-    }
+#[get("/")]
+async fn random_number() -> impl Responder {
+    let number = rand::thread_rng().gen_range(1..=100000);
+    number.to_string()
 }
 
-fn main() {
-    yew::start_app::<App>();
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| App::new().service(random_number))
+        .bind("0.0.0.0:8081")?
+        .run()
+        .await
 }

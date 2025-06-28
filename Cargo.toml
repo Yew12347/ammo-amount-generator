@@ -1,10 +1,8 @@
 [package]
-name = "randomnumber"
+name = "randombackend"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-yew = "^0.19"
-implicit-clone = "0.4"
-indexmap = "1.9"
-js-sys = "0.3"
+actix-web = "4"
+rand = "0.8"
