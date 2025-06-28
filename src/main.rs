@@ -6,7 +6,7 @@ fn app() -> Html {
     let random_number = (Math::random() * 100.0).floor() as u32 + 1;
 
     html! {
-        <body> { random_number } </body>
+        { random_number }
     }
 }
 
